@@ -1,0 +1,35 @@
+    \begin{figure}[h!]
+        \centering
+        
+        \begin{tikzpicture}[scale = 0.67]
+            %\draw [step = 1 cm, help lines] (-5,-5) grid (5,5);
+            \draw [blue, ultra thin] (-3.398076211,0) -- (3.398076211,0);   
+            \draw [blue, ultra thin] (0,-3.398076211) -- (0,3.398076211);
+            
+            \draw [blue, ultra thick] (0,0) circle (3);
+            
+            \draw [red] (0,0) -- (2.598076211, 1.5);
+            \definecolor{arcColor}{RGB}{93,134,182}
+
+            \draw [arcColor] (1,0) arc [radius = 1, start angle =0, end angle = 30];
+            
+            \draw [arcColor] (0,1.5) -- (2.598076211, 1.5) -- ( 2.598076211,0); 
+            
+            \draw[black] (2.598076211, 1.5) -- (3.398076211, 1.5);
+            \draw[black] (2.598076211, 1.5) -- (2.598076211, 2.3);
+            
+            \draw[blue, thick, <->, >=latex] (0,2) -- (2.598076211, 2);
+            \draw[blue, thick, <->, >=latex] ( 3.098076211,0) -- (3.098076211, 1.5);
+            
+            \node [above] at (1,2) {$\cos{\theta}$};
+            \node [right] at (3.098076211,0.75) {$\sin{\theta}$};
+            \node [above] at (1.1,0) {$\theta$};
+            
+            \node[rotate = 30, red, above] at (1.299038106, 0.75) {r=1};
+            
+            
+        \end{tikzpicture}
+        
+        \caption{Alternate representation of Pythagorean theorem.}
+        \label{fig:pythThmFig2}
+    \end{figure}

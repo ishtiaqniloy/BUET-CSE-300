@@ -1,0 +1,32 @@
+\begin{titlepage}
+
+\begin{center}
+
+\vspace*{1cm}
+
+\Large{CSE300\textunderscore Assignment1 \\ 
+    Introduction to \LaTeX} \\ 
+\Huge{Assignment Name}
+    
+    \vspace{1cm}
+    
+\large{Abdullah Al Ishtiaq \\
+    Student ID: 1505080 }
+    
+    \vspace{4cm}
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width = 0.3\linewidth]{Figures/logoBUET.png}
+\end{figure}
+
+\Large{Department of Computer Science and Engineering \\
+    Bangladesh University of Engineering and Technology \\
+    (BUET) \\
+    Dhaka 1000 \\
+    April 14, 2018 }
+
+
+\end{center}
+
+\end{titlepage}

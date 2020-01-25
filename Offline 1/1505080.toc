@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {subsection}{\numberline {1.1}Some Important Definitions}{3}
+\contentsline {subsection}{\numberline {1.2}Elastic Properties of a Matter and Inter-molecular Forces}{3}
+\contentsline {section}{\numberline {2}Different Types of Strain and Stress}{4}
+\contentsline {subsection}{\numberline {2.1}Longitudinal or Tensile}{4}
+\contentsline {subsection}{\numberline {2.2}Volume or Bulk}{5}
+\contentsline {subsection}{\numberline {2.3}Shearing}{5}
+\contentsline {section}{\numberline {3}Elastic Moduli}{6}
+\contentsline {subsection}{\numberline {3.1}Hooke's Law}{6}
+\contentsline {subsection}{\numberline {3.2}Different Moduli}{6}
+\contentsline {section}{\numberline {4}Work Done or Potential Energy stored for Stretching a Wire}{6}
+\contentsline {subsection}{\numberline {4.1}Total Work or Total Potential Energy}{6}
+\contentsline {subsection}{\numberline {4.2}Potential Energy in Unit Volume}{7}

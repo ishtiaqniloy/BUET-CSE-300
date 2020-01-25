@@ -1,0 +1,46 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{authblk}
+\usepackage{graphicx}
+\usepackage{titlepic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xspace}
+\usepackage{epstopdf}
+
+\begin{document}
+
+\begin{titlepage}
+
+\begin{center}
+
+\title{\Large{CSE300\textunderscore Assignment1 \\ 
+    Introduction to \LaTeX} \\ 
+    \Huge{Assignment Name} }
+    
+\author{Abdullah Al Ishtiaq \\
+    Student ID: 1505080 }
+
+\date{April 14, 2018}
+
+
+\includegraphics[width = 40mm]{Figures/logoBUET.png}
+
+\end{center}
+
+\end{titlepage}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+\end{document}
