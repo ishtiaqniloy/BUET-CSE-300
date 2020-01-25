@@ -1,0 +1,220 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{color}
+\usepackage{subfiles}
+\usepackage[T1]{fontenc}
+\usetheme{CambridgeUS}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{algorithm2e}
+\usepackage{algorithmic}
+\graphicspath{ {./Pictures} }
+
+\title{Red Black Tree}
+\subtitle{Properties and Visualization}
+\author[Sawmya, Niloy] % (optional, for multiple authors)
+{Shashata~Sawmya\inst{1} \and \\Abdullah Al Ishtiaq\inst{1}}
+\institute[BUET] % (optional)
+{
+  \inst{1}%
+  Department of Computer Science and Engineering\\
+  BUET
+  
+}
+\date{\today}
+
+\begin{document}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt 
+\maketitle
+
+\begin{frame}{Frame Title}
+\frametitle{A Practical Problem}
+\centering
+\includegraphics[scale = 0.4]{Pictures/Linux_Logo.png}
+Suppose we have some programmes to be run by our linux OS scheduler. The linux schdeduler will need a data structure to sort them by their lowest spent execution time. So, it might need a Binary Search tree to sort the programmes. But, a BST might grow linearly in worst case as new programmes are inserted  to be managed by the scheduler which will increase the run-time from $\mathcal{O}(n\log{n})$ to $\mathcal{O}(n^2)$. So, it will require a self height balancing BST which will always give the reduced searching time. 
+
+
+    
+\end{frame}
+
+\begin{frame}{Frame Title}
+\frametitle{What is Red Black Tree?}
+\setbeamercovered{dynamic}
+    \begin{itemize}
+        \item<1-> A red–black tree is a kind of self-balancing binary search tree in computer science. 
+        \item<2-> Each node of the binary tree has an extra bit, and that bit is often interpreted as the color (red or black) of the node. 
+        \item<3-> By constraining the node colors on any simple path from the root to a leaf, red-black trees ensure that no such path is more than twice as long as any other. 
+        \item<4->  The tree is thus approximately height balanced. 
+    \end{itemize}
+      
+\end{frame}
+
+
+\begin{frame}{Properties of a Red Black Tree}
+%\frametitle{Properties of a Red Black Tree}
+\centering
+\subfile{Pictures/RBT1.tex}
+\end{frame}
+
+\begin{frame}{Frame Title}
+\frametitle{Properties of Red Black Tree}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            A Red Black Tree is a Binary Search Tree which have the following Red-Black properties: 
+
+            \begin{enumerate}
+                
+                \item \textcolor{red}{Color Property:} Each node is either red or black.
+                \item \textcolor{red}{Root Property:} The root is black
+                \item \textcolor{red}{External Property:} Every external node is black
+                \item \textcolor{red}{Internal Property:} Both children of a red node are black.
+                \item \textcolor{red}{Depth Property:} For each node, all simple paths from the node to descendant leaves contain the same number of black nodes.
+            \end{enumerate}
+            
+        \end{column}
+        
+        \begin{column}{0.5\textwidth}
+            \centering
+            \subfile{Pictures/RBTP1.tex}
+        \end{column}
+        
+        
+    \end{columns}
+
+
+    
+\end{frame}
+
+
+
+\begin{frame}{Searching 22}
+%\frametitle{Searching 22}
+\centering
+\subfile{Pictures/RBTS1.tex}
+\end{frame}
+
+
+\begin{frame}{Searching 22}
+%\frametitle{Searching 22}
+\centering
+\subfile{Pictures/RBTS2.tex}
+\end{frame}
+
+\begin{frame}{Searching 22}
+%\frametitle{Searching 22}
+\centering
+\subfile{Pictures/RBTS3.tex}
+\end{frame}
+
+\begin{frame}{Searching 22}
+%\frametitle{Searching 22}
+\centering
+\subfile{Pictures/RBTS4.tex}
+\end{frame}
+
+\begin{frame}{Why Red Black Tree is Height Balanced}
+\begin{columns}
+        \begin{column}{0.5\textwidth}
+            
+            Red Black Tree for storing n items will have a height of $\mathcal{O}(n)$. So, it will remain height balanced.
+
+            \begin{enumerate}
+                \item the subtree rooted at any node x contains at least $2^{bh(x)} - 1$  internal nodes. 
+                \item If $h(x) = 0$ then $x$ is a leaf, so the subtree rooted at x contains $2^0-1 = 0$ internal nodes.
+                \item For a node x with positive height and two children, the black height of the children will be $ bh(x) $ (for red internal node) or  $bh(x) - 1$ (for black internal node).
+                
+                
+            \end{enumerate}
+            
+        \end{column}
+        
+        \begin{column}{0.5\textwidth}
+            \centering
+            \subfile{Pictures/RBTThm1.tex}
+            \subfile{Pictures/RBTThm2.tex}
+            \subfile{Pictures/RBTThm3.tex}
+           
+            
+        \end{column}
+
+\end{columns}    
+\end{frame}
+
+\begin{frame}{Why Red Black Tree is Height Balanced}
+
+\begin{itemize}
+    \item So, using induction, we can prove subtree rooted at x contains at least $(2^{bh(x)-1}-1) + (2^{bh(x)-1}-1) + 1 = (2^{bh(x)} -1)$ internal nodes.
+    \item According to the internal property the black-height of the root must be at least $\frac{h}{2}$; thus
+    \item  $n \geqslant 2^{\frac{h}{2}}-1$
+	\item  $\log(n+1) \geqslant \frac{h}{2}$
+	\item $h \geqslant 2\log(n+1)$	
+	\item Thus $h = \mathcal{O}(\log(n))$
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{Red Black Tree Insertion}
+\setbeamercovered{dynamic}
+\begin{itemize}
+    \item<1-> We can insert each node in Red Black Tree in $\mathcal{O}\log(n)$ time
+    \item<2-> We use left rotation, right rotation and recoloring of nodes to fix the property violation which is caused by inserting a new node.
+    \item<3-> There are roughly three cases in Red Black Tree Insertion.
+    \item<4-> We are simulating the insertion of 5 keys: ${2,3,5,7,4}$ consecutively in an empty RBT.
+    
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Insert 2}
+%\frametitle{Searching 22}
+\centering
+\subfile{Pictures/RBTI1.tex}
+\end{frame}
+
+\begin{frame}{Insert 3}
+%\frametitle{Searching 22}
+\centering
+\subfile{Pictures/RBTI2.tex}
+\end{frame}
+
+\begin{frame}{Insert 5}
+%\frametitle{Searching 22}
+\centering
+\subfile{Pictures/RBTI3.tex}
+\end{frame}
+
+\begin{frame}{Insert 7}
+%\frametitle{Searching 22}
+\centering
+\subfile{Pictures/RBTI4.tex}
+\end{frame}
+
+\begin{frame}{Insert 4}
+%\frametitle{Searching 22}
+\centering
+\subfile{Pictures/RBTI5.tex}
+\end{frame}
+
+\begin{frame}{Red Black Tree Insert}
+    \subfile{Algorithms/RBTInsert.tex}
+\end{frame}
+
+\begin{frame}{Red Black Tree Deletion}
+    \setbeamercovered{dynamic}
+    \begin{itemize}
+        \item<1-> Similar to Red Black Tree Insertion, Deletion also runs in $\mathcal{O}\log(n)$ time
+        \item<2-> Deletion is a bit more complicated than Insertion
+        \item<3-> There are mainly three cases in RBT Deletion; in one of the cases, a double black node is created which can be handled through six different cases.
+       
+    \end{itemize}
+    
+\end{frame}
+    \begin{frame}{Conclusion}
+    \centering
+    \Huge THANK YOU \\
+    \Huge ANY QUESTIONS ?
+\end{frame}
+
+\end{document}
